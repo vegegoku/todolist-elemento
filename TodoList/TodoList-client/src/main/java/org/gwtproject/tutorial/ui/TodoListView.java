@@ -68,13 +68,14 @@ public abstract class TodoListView implements IsElement<HTMLElement>{
 
         menuClearDone.addEventListener("click", event -> {
             closeMenu();
-
+            List<ItemView> removedItems=new ArrayList<>();
             for (ItemView item : items) {
                 if (item.isDone()) {
                     content.removeChild(item.asElement());
-                    items.remove(item);
+                    removedItems.remove(item);
                 }
             }
+            items.removeAll(removedItems);
         });
     }
 
