@@ -32,9 +32,6 @@
           <configuration>
             <skip>false</skip>
             <scanIntervalSeconds>1</scanIntervalSeconds>
-            <webApp>
-              <extraClasspath>${basedir}/../TodoList-shared/target/classes/</extraClasspath>
-            </webApp>
           </configuration>
         </plugin>
         <plugin>
