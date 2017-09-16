@@ -1,0 +1,91 @@
+<div>
+    <style is="custom-style">
+            paper-icon-item {
+                position: relative;
+                overflow: hidden;
+                cursor : pointer;
+            }
+            .toolbar {
+                background: #4285f4 !important;
+            }
+            .header {
+                font-size: 200%;
+                margin-left: 50px;
+            }
+            .content {
+                padding: 15px;
+            }
+
+            .item {
+                font-size: 15px;
+                padding-left: 20px;
+            }
+
+            .add {
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                --paper-fab-background: var(--paper-red-500);
+            }
+
+            .dialog {
+                min-width: 70%;
+            }
+
+
+
+        </style>
+    <paper-drawer-panel data-element="drawerPanel">
+        <div drawer="">
+            <paper-header-panel mode="seamed">
+                <paper-toolbar class="toolbar"></paper-toolbar>
+                <paper-icon-item data-element="menuClearAll">
+                    <iron-icon icon="delete" item-icon=""></iron-icon>
+                    <div>Clear All</div>
+                    <paper-ripple></paper-ripple>
+                </paper-icon-item>
+                <paper-icon-item data-element="menuClearDone">
+                <iron-icon icon="clear" item-icon=""></iron-icon>
+                    <div>Clear Done</div>
+                <paper-ripple></paper-ripple>
+                </paper-icon-item>
+                <paper-icon-item data-element="menuSettings">
+                    <iron-icon icon="settings" item-icon=""></iron-icon>
+                    <div>Settings</div>
+                    <paper-ripple></paper-ripple>
+                </paper-icon-item>
+                <paper-icon-item data-element="menuAbout">
+                    <iron-icon icon="help" item-icon=""></iron-icon>
+                    <div>About</div>
+                    <paper-ripple></paper-ripple>
+                </paper-icon-item>
+            </paper-header-panel>
+        </div>
+        <div main="">
+            <paper-header-panel mode="seamed">
+                <paper-toolbar class="toolbar">
+                    <paper-icon-button data-element="menu" icon="more-vert" paper-drawer-toggle=""></paper-icon-button>
+                    <span class="header">Todo List</span>
+                </paper-toolbar>
+                <div data-element="content" class="content vertical center-justified layout"></div>
+            </paper-header-panel>
+            <paper-fab data-element="addButton" icon="add" title="add" class="add"></paper-fab>
+        </div>
+    </paper-drawer-panel>
+
+    <paper-dialog data-element="addItemDialog"
+                  entry-animation="fade-in-animation"
+                  class="dialog" modal="">
+        <h2>Add Item</h2>
+        <paper-input data-element="titleInput" label="Title" required=""
+                     auto-validate="" error-message="required input!"></paper-input>
+        <div class="textarea-container iron-autogrow-textarea">
+            <paper-textarea data-element="descriptionInput" label="Notes"></paper-textarea>
+        </div>
+        <div class="buttons">
+            <paper-button dialog-dismiss="">Cancel</paper-button>
+            <paper-button data-element="confirmAddButton"
+                          dialog-confirm="">OK</paper-button>
+        </div>
+    </paper-dialog>
+</div>
