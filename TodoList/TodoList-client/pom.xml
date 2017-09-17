@@ -64,6 +64,10 @@
         <configuration>
           <moduleName>org.gwtproject.tutorial.App</moduleName>
           <moduleShortName>todolist</moduleShortName>
+          <codeserverArgs>
+            <arg>-bindAddress</arg>
+            <arg>192.168.1.3</arg>
+          </codeserverArgs>
         </configuration>
       </plugin>
     </plugins>

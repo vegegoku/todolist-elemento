@@ -1,5 +1,7 @@
 package org.gwtproject.tutorial.ui;
 
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.user.client.Window;
 import com.vaadin.polymer.paper.*;
 import elemental2.dom.Event;
 import elemental2.dom.EventListener;
@@ -49,7 +51,7 @@ public abstract class TodoListView implements IsElement<HTMLElement>{
     void onInit(){
         addButton.addEventListener("click", event -> addItemDialog.open());
 
-        confirmAddButton.addEventListener("click", event -> {
+        confirmAddButton.addEventListener("tap", event -> {
             if (!titleInput.getValue().isEmpty()) {
                 addItem(titleInput.getValue(), descriptionInput.getValue());
                 // clear text fields
