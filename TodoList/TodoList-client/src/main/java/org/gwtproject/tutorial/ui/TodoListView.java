@@ -49,7 +49,7 @@ public abstract class TodoListView implements IsElement<HTMLElement>{
 
     @PostConstruct
     void onInit(){
-        addButton.addEventListener("click", event -> addItemDialog.open());
+        addButton.addEventListener("tap", event -> addItemDialog.open());
 
         confirmAddButton.addEventListener("tap", event -> {
             if (!titleInput.getValue().isEmpty()) {
@@ -60,7 +60,7 @@ public abstract class TodoListView implements IsElement<HTMLElement>{
             }
         });
 
-        menuClearAll.addEventListener("click", event -> {
+        menuClearAll.addEventListener("tap", event -> {
             closeMenu();
             // remove all child elements
             while (content.hasChildNodes()) {
@@ -68,7 +68,7 @@ public abstract class TodoListView implements IsElement<HTMLElement>{
             }
         });
 
-        menuClearDone.addEventListener("click", event -> {
+        menuClearDone.addEventListener("tap", event -> {
             closeMenu();
             List<ItemView> removedItems=new ArrayList<>();
             for (ItemView item : items) {
